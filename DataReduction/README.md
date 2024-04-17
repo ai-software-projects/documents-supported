@@ -1,6 +1,6 @@
 # Data Reduction Practices
 
-1. Dimensionality Reduction
+# 1. Dimensionality Reduction
 
 ### Concept
 
@@ -63,3 +63,57 @@ Hence indices = 2 (it covers 95%) but 2 does not lie in [4,9]
 and so DNP
 
 Result : Do not Apply PCA
+
+
+# 2. Feature Selection
+
+Select the required features and ignore the features with less importance, less variance and correlation.
+
+IMP: We consider two ways to automate and generalise this
+
+Feature selection by Filter methods
+
+Feature selection by Embedded methods
+
+### Filter methods: 
+
+#### ANOVA: 
+ANOVA F-value method estimates the degree of linearity between the input feature (i.e., predictor) and the output feature.
+
+f_classif, which calculate F-value between input and output feature for classification task
+
+f_regression, which calculate F-value between input and output feature for classification task
+
+#### Variance threshold:
+Variance threshold method removes features whose variance below a pre-defined cutoff value.
+
+#### Mutual Information:
+Mutual information (MI) measures the dependence of one variable to another by quantifying the amount of information obtained about one feature, through the other feature
+
+mutual_info_classif, which calculate MI for classification task
+
+mutual_info_regression, which calculate MI for regression task
+
+#### Selector for these algorithms: SelectKBest
+
+SelectKBest has two important parameters:
+
+score_func: the filter function that is used for feature selection
+k: the number of top features to select
+
+### Algorithm for Filter:
+
+If linear dependency is there (check first) use ANOVA and optimise it
+
+If non linear, use Mutual Info and optimise it
+
+If too many features, first apply Variance threshold and remove those with variance < 15%
+
+Optimisation: Check total variance and SelectKBest
+
+
+### Embedded methods
+
+#### For Tree/Forest classification Use Decision tree/RFC based feature selection
+
+#### For Linear/Logistic Regression Use Lasso / Ridge Regression
