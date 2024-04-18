@@ -1,4 +1,4 @@
-# Handling Missing values in Machine Learning
+# Handling Missing values 
 ### What are missing values?
  In datasets, missing values happen when information about something is not available. It's like having gaps in our data. - Example: Think of a class register where we know some students' names, but we don't have their ages or grades.
 
@@ -8,18 +8,25 @@
 ### Understanding Missing Data
 Types of Missing Data:
 <br/>
-Missing Completely at Random (MCAR): - 
+<ul>
+<li>
+ <h4>Missing Completely at Random (MCAR): - </h4>
  In MCAR, the probability of data being missing is the same for all the observations. In this case, there is no relationship between the missing data and any other values observed or unobserved (the data which is not recorded) within the given dataset. That is, missing values are completely independent of other data. There is no pattern.
+ </li>
+<li>
+ <h4>Missing at Random (MAR): -</h4>
+
+ MAR data means that the reason for missing values can be explained by variables on which you have complete information, as there is some relationship between the missing data and other values/data. In this case, the data is not missing for all the observations. It is missing only within sub-samples of the data, and there is some pattern in the missing values.
  <br/>
-Missing at Random (MAR): - MAR data means that the reason for missing values can be explained by variables on which you have complete information, as there is some relationship between the missing data and other values/data. In this case, the data is not missing for all the observations. It is missing only within sub-samples of the data, and there is some pattern in the missing values.
-<br/>
 For example, if you check the survey data, you may find that all the people have answered their ‘Gender,’ but ‘Age’ values are mostly missing for people who have answered their ‘Gender’ as ‘female.’ (The reason being most of the females don’t want to reveal their age.)
-<br/>
-Missing Not at Random (MNAR): - 
+</li>
+<li>
+<h4>Missing Not at Random (MNAR): - </h4>
 Missing values depend on the unobserved data. If there is some structure/pattern in missing data and other observed data can not explain it, then it is considered to be Missing Not At Random (MNAR).This is when the missing data is related to the information we're missing itself. It's a bit tricky because the fact that it's missing tells us something. 
 <br/>
  Example: If students who struggle in a subject are less likely to report their grades, and that's why we have missing grades for some, it's not random; it's because of their performance.
-<br/>
+</li>
+</ul>
 
 ### Handling Missing Values
 ### A. Removal of Missing Values:
@@ -76,4 +83,6 @@ Matrix Factorization Methods: - Think of a puzzle with missing pieces. Matrix fa
 <li>
 Generative Adversarial Networks (GANs) for Imputation: - GANs are like artists trying to create a missing part of a painting. They generate realistic values to fill in the gaps in the data. - Example: If you have missing values in an image dataset, GANs can generate new images that fit well with the existing ones, completing the dataset.
 </li>
-<ol>
+</ol>
+
+##### Reference Link : https://www.linkedin.com/pulse/complete-guide-handling-missing-values-machine-learning-didarul-islam-1elpe/
